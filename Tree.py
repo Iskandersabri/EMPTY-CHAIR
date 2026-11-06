@@ -1,5 +1,6 @@
 class TreeNode:
-    def __init__(self, value: any | None, firstChild : int = -1, nextSubnit: int = -1, parent: int = 0):
+    def __init__(self, value: any | None, firstChild : int = -1, nextSubnit: int = -1, parent: int = 0, feature :str):
+        self.feature = feature
         self.value = value
         self.firstChild = firstChild
         self.nextSubnit = nextSubnit
