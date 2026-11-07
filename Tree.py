@@ -1,5 +1,5 @@
 class TreeNode:
-    def __init__(self, value: any | None,feature :str | None, firstChild : int = -1, nextSubnit: int = -1, parent: int = 0):
+    def __init__(self, value: object | None, feature: str | None, firstChild: int = -1, nextSubnit: int = -1, parent: int = 0):
         self.feature = feature
         self.value = value
         self.firstChild = firstChild
@@ -8,7 +8,9 @@ class TreeNode:
 
 
 class FlattenedArray:
-    def __init__(self, root: TreeNode = TreeNode(None, None)):
+    def __init__(self, root: TreeNode | None = None):
+        if root is None:
+            root = TreeNode(None, None)
         self.root = root
         self.data = [(self.root.value, self.root.feature)]
         self.firstChilds = [-1]
