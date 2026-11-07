@@ -10,13 +10,13 @@ class TreeNode:
 class FlattenedArray:
     def __init__(self, root: TreeNode = TreeNode(None)):
         self.root = root
-        self.data = [self.root.value]
+        self.data = [self.root.value, self.root.feature]
         self.firstChilds = [-1]
         self.nextSubnit = [-1]
         self.size = 1
 
     def add(self, node: TreeNode):
-        self.data.append(node.value)
+        self.data.append((node.value, node.feature))
         self.firstChilds.append(node.firstChild)
         self.nextSubnit.append(node.nextSubnit)
         index = self.size
